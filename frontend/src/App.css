@@ -1,4 +1,37 @@
 .App{
   background-color: #f0f0f0;
   font-size: 1rem;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  padding-top: 100px;
+  position: absolute;
+}
+.container{
+  display: flex;
+  display: inline-block;
+
+}
+
+.block{
+  display: flex;
+  margin: auto;
+  align-content: center;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+   border-radius: 10px;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #ffff;
+  width: 50%;
+  padding: 30px;
+  height: auto;
+}
+.date{
+  width: 100%;
+  height: auto;
+  font-size: 12px;
+  position: relative;
+  bottom: 0;
+  margin-top: 100%;
+  text-align: left;
 }
