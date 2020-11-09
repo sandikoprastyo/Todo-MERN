@@ -12,7 +12,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-
 //! Endpoint post data
 router.post('/', async (req, res) => {
   const dataPost = new Posts({
