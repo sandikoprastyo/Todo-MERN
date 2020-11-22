@@ -1,16 +1,57 @@
+.container-hero {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero {
+  width: 40ch;
+  margin-bottom: 30px;
+}
+
+.hero h2 {
+  color: #001529;
+  font-weight: 300;
+  line-height: 40px;
+  text-align: center;
+  font-size: 1.8em;
+}
+
+.hero span {
+  font-weight: 550;
+}
+
+#box {
+  border: 1px solid black;
+  margin-left: 6px;
+  border-radius: 5px;
+  padding: 0 3px;
+}
+
 form {
   overflow: auto;
-  margin-bottom: 30px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-self: space-between;
 }
 
 textarea {
   border: none;
-  border-radius: 6px;
-  padding: 10px;
-  width: 60%;
-  height: auto;
+  font-size: 1em;
+  padding: 38px 10px 10px 10px;
+  width: 450px;
+  height: 125px;
   overflow: auto;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-right: 30px;
+  resize: none;
+  border-radius: 5px;
+}
+
+textarea::placeholder {
+  transition: 0.3s;
 }
 
 textarea:focus {
@@ -18,11 +59,11 @@ textarea:focus {
 }
 
 textarea:focus::placeholder {
-  opacity: 0;
+  transform: translateY(-30px);
   transition: 0.3s ease-out;
 }
 
 textarea::placeholder {
   font-size: 1rem;
-  transition: .3s ease-in;
+  transition: 0.3s ease-in;
 }

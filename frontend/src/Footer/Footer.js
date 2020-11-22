@@ -1,12 +1,12 @@
-import React from 'react';
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
 
 const Footer = (props) => {
   return (
     <>
-      <footer className='fixed-bottom'>
+      <footer>
         <p>
-          Created by <span> Aji Hidayat and Sandiko</span>
+          Created by <span> Aji Hidayat </span>and <span>Sandiko Prastyo</span>
         </p>
       </footer>
     </>

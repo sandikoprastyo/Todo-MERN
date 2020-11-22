@@ -1,37 +1,58 @@
-.App{
+.App {
   background-color: #f0f0f0;
-  font-size: 1rem;
+  padding-top: 30px;
+}
+
+.container {
+  margin-bottom: 50px;
+}
+
+/* Card */
+.box-wrap {
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  min-height: 100%;
-  height: auto;
-  padding-top: 100px;
-  position: absolute;
-}
-.container{
-  display: flex;
-  display: inline-block;
-
-}
-
-.block{
-  display: flex;
-  margin: auto;
-  align-content: center;
-   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-   border-radius: 10px;
-  margin-top: 20px;
-  text-align: center;
-  background-color: #ffff;
-  width: 50%;
   padding: 30px;
-  height: auto;
 }
-.date{
+
+.box {
+  width: 60%;
+  background-color: #001529;
+  color: #fff;
+  overflow: auto;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+}
+
+.box:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+  transition: 0.3s;
+}
+
+.box-title {
+  margin-bottom: 20px;
+}
+
+.box-content {
+  letter-spacing: 1.15px;
+  font-weight: 300;
+}
+
+.box-date {
+  color: #a4a4a4;
+  font-weight: 300;
+}
+
+.box-button {
   width: 100%;
-  height: auto;
-  font-size: 12px;
-  position: relative;
-  bottom: 0;
-  margin-top: 100%;
-  text-align: left;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-delete {
+  margin-right: 20px;
 }

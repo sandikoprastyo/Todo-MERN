@@ -1,14 +1,14 @@
-footer{
-  background-color: #fff;
+footer {
+  background-color: #001529;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 12px 0;
-  color: #A4A4A4;
-  font-weight: 30;
+  color: #a4a4a4;
+  font-weight: 300;
 }
 
-span{
+footer span {
   font-weight: 500;
-  color: black;
+  color: #fff;
 }
