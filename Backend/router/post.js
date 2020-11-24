@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   const dataPost = new Posts({
     todo: req.body.todo,
+    desc: req.body.desc,
   });
   try {
     const savePost = await dataPost.save();
