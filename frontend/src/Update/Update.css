@@ -75,14 +75,14 @@ input:focus::placeholder{
 textarea {
   border: none;
   font-size: 1em;
-  padding: 10px;
+  padding: 38px 10px 10px 10px;
   width: 90%;
   height: 125px;
   overflow: auto;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   resize: none;
   border-radius: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   transition: .3s ease-in;
 }
 

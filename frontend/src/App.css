@@ -56,3 +56,11 @@
 .btn-delete {
   margin-right: 20px;
 }
+
+.container-update{
+  background-color:gray;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+
+}

@@ -22,6 +22,7 @@ const FormInput = () => {
     });
   };
 
+  //sweet alert
   const onConfirm = () => {
     setAlert(false);
   };

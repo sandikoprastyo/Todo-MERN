@@ -1,3 +1,8 @@
+@font-face {
+  font-family: roboto bold;
+  src: url(../assets/fonts/Roboto/Roboto-BoldItalic.ttf) format(ttf);
+}
+
 header {
   width: 100%;
   background-color: #001529;
@@ -7,6 +12,7 @@ header {
   align-items: center;
   position: sticky;
   top: 0;
+  font-family: roboto bold;
 }
 
 header h3 {
