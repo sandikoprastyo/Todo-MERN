@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
-import Routers from './Router';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Routers />
+    <App />
   </React.StrictMode>,
   document.getElementById('root'),
 );

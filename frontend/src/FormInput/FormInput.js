@@ -41,17 +41,17 @@ const FormInput = () => {
       </div>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Todo</label>
+          <h3 className='title-text'>Todo</h3>
           <input
             onChange={(e) => setTodo(e.target.value)}
             value={todo}
             name='todo'
             type='text'
-            placeholder='Go to work'
+            placeholder='Example Go to work'
             required
           />
         </div>
-        <div>
+        {/*         <div>
           <label>Desc</label>
           <textarea
             onChange={(e) => setDesc(e.target.value)}
@@ -61,7 +61,7 @@ const FormInput = () => {
             placeholder='Im go to work 8:00 clock'
             required
           ></textarea>
-        </div>
+        </div> */}
         <Button className='btn btn-add' name='Create' />
         {alert && (
           <SweetAlert

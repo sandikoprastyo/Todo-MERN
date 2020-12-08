@@ -11,10 +11,10 @@ import Footer from './Footer/Footer';
 
 const App = () => {
   const [alert, setAlert] = useState(false);
-  const [update, setUpdate] = useState(false);
   const [todo, setTodo] = useState([]);
-  const [todos, setTodos] = useState('');
-  const [desc, setDesc] = useState('');
+  const [update, setUpdate] = useState(false);
+  const [todoUpdate, setTodoUpdate] = useState([]);
+  const [updateID, setUpdateID] = useState(null);
 
   useEffect(() => {
     axios
@@ -26,6 +26,7 @@ const App = () => {
         setTodo([
           {
             todo: 'Data error check your internet',
+            desc: 'Data error check your internet',
             date: new Date(),
           },
         ]);
@@ -48,23 +49,28 @@ const App = () => {
   };
 
   ///sweet alert cancel update button
-  const onCancelUpdate = () => setUpdate(false);
-  ///sweet alert confirm update button
-  const onConfirmUpdate = () => {
+  const onCancelUpdate = () => {
     setUpdate(false);
-    patcher();
+    setUpdateID(null);
   };
 
-  //func update button
-  const handleUpdate = () => setUpdate(true);
+  ///sweet alert confirm update button
+  const handleUpdate = (_id) => {
+    setUpdate(true);
+    setUpdateID(_id);
+  };
 
-  const patcher = (_id) => {
-    console.log('====================================');
-    console.log(_id);
-    console.log('====================================');
-    /*   axios.patch(`http://localhost:8000/post/${_id}`, {
-      todo: 'response',
-    }); */
+  //!!Bug is here not get _id
+  const onConfirmUpdate = () => {
+    setUpdate(false);
+    let ID = updateID;
+    axios
+      .patch(`http://localhost:8000/post/${ID}`, {
+        todo: todoUpdate,
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -79,7 +85,6 @@ const App = () => {
             <div className='box-wrap' key={i}>
               <div className='box' key={todo._id}>
                 <h2 className='box-title'>{todo.todo}</h2>
-                <p className='box-content'>{todo.desc}</p>
                 <p className='box-date'> {todo.date}</p>
                 <div className='box-button'>
                   <Button
@@ -90,7 +95,7 @@ const App = () => {
                   <Button
                     name='Update'
                     className='btn btn-update'
-                    onClick={(e) => handleUpdate(todo._id, e)}
+                    onClick={() => handleUpdate(todo._id)}
                   />
                 </div>
               </div>
@@ -112,31 +117,24 @@ const App = () => {
             cancelBtnBsStyle='dark'
             title='Todo update'
             placeHolder='Write something'
+            showCancel={true}
             onCancel={onCancelUpdate}
-            onConfirm={(response) => onConfirmUpdate(response)}
-            dependencies={[todo]}
+            onConfirm={(response) => onConfirmUpdate(response, todo._id)}
+            dependencies={todo}
           >
             {(renderProps) => (
               <div className='container-update'>
                 <form>
                   <hr />
                   <input
+                    required
                     type={'text'}
                     ref={renderProps.setAutoFocusInputRef}
                     className='form-control'
-                    value={todos}
+                    value={todoUpdate}
                     onKeyDown={renderProps.onEnterKeyDownConfirm}
-                    onChange={(e) => setTodos({ todos: e.target.value })}
-                    placeholder={'Todos'}
-                  />
-                  <br />
-                  <input
-                    type={'text'}
-                    className='form-control'
-                    value={desc}
-                    onKeyDown={renderProps.onEnterKeyDownConfirm}
-                    onChange={(e) => setDesc({ desc: e.target.value })}
-                    placeholder={'Desc'}
+                    onChange={(e) => setTodoUpdate(e.target.value)}
+                    placeholder={'Todo'}
                   />
                   <hr />
                 </form>
